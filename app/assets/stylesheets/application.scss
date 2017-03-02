@@ -362,7 +362,7 @@ Business reviews styling
   ul {
     margin: 0 auto;
     list-style: none;
-    width: 600px;
+    width: 800px;
 
     li {
       overflow: hidden;
@@ -384,6 +384,7 @@ Business reviews styling
       .user-stats-container {
         float: left;
         margin-left: 5px;
+        text-align: left;
       }
 
       a {
@@ -391,13 +392,13 @@ Business reviews styling
       }
 
       p {
-        text-align: right;
         margin-top: 5px;
       }
     }
 
     .review-container {
       float: right;
+      width: 300px;
 
       a.review-company {
         display: block;
