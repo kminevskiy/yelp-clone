@@ -1,0 +1,6 @@
+= render "shared/page_title", title: @category.name
+
+section.category-businesses
+  ul
+    - @category.businesses.each_with_index do |business, idx|
+      = render "shared/business", business: business, index: idx

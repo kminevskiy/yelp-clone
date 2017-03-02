@@ -1,0 +1,8 @@
+- if logged_in?
+  = link_to "New Business", add_business_path, class: "add-new-business"
+= render "shared/page_title", title: "Some of our great businesses!"
+
+section.business-section
+  ul.business-list
+    - @businesses.each_with_index do |business, idx|
+      = render "shared/business", business: business, index: idx

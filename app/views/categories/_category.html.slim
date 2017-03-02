@@ -1,0 +1,7 @@
+li.category
+  - if category.businesses.count > 0
+    = link_to category do
+      p = "#{category.name}(#{category.businesses.count})"
+  - else
+    p = "#{category.name}(#{category.businesses.count})"
+

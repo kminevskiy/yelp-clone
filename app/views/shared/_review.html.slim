@@ -1,0 +1,12 @@
+li.review
+  - if business_page
+    = link_to review.user.full_name, review.user
+  - else
+    = link_to review.business.name, review.business
+  .review-container
+    - if reviews_page
+      = link_to review.business.name, review.business, class: "review-company"
+    img(src="#{show_star_rating(review)}")
+    span.review-date = format_date(review.created_at)
+    p.review-content = review.comment
+

@@ -1,0 +1,8 @@
+li.business-details
+  .business-info
+    p #{full_address(business)}
+    a(href="tel:#{business.phone_num}") #{business.phone_num}
+  p.business-name #{index + 1}. #{link_to business.name, business, class: "business-name"}
+  p
+    img(src="#{show_star_rating(business)}") #{pluralize(business.reviews.count, "review")}
+  p #{create_categories_links(business)}

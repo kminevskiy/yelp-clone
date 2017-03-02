@@ -1,0 +1,21 @@
+= render "shared/page_title", title: "Business details"
+
+section.business-page
+  .business-info
+    p.business-address #{full_address(@business)}
+    a(href="tel:#{@business.phone_num}") #{@business.phone_num}
+  h1.business-name = @business.name
+  p
+    img(src="#{show_star_rating(@business)}") #{pluralize(@business.reviews.count, "review")}
+  p #{create_categories_links(@business)}
+
+- if logged_in? && current_user.first_review?(@business.id)
+  section.new-review
+    = render "reviews/form", business: @business, review: @review
+
+section.reviews
+  - if @business.reviews.present?
+    h3 Reviews
+    ul
+      - @business.reviews.each_with_index do |review|
+        = render "shared/review", review: review, business_page: true, reviews_page: false

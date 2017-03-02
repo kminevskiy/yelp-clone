@@ -1,0 +1,423 @@
+/*
+========================
+General styling
+========================
+*/
+
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 150px;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin: 50px 0 25px 0;
+  color: #d32323;
+}
+
+a {
+  text-decoration: none;
+  color: #2262d9;
+}
+
+input, textarea {
+  -webkit-appearance: none;
+}
+
+[type="submit"] {
+  padding: 8px 16px;
+  background: #d90007;
+  color: #fff;
+  border: 1px solid #8d0005;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.field_with_errors:nth-of-type(even) input {
+  border: 1px solid red;
+}
+
+.login-right {
+  float: right;
+
+  &:hover {
+    background: #8d0005;
+  }
+
+  a {
+    margin: 0 10px;
+    padding: 10px 0 3px 0;
+    border-bottom: 1px solid #8d0005;
+    transition: border 200ms ease-in-out;
+
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+}
+
+/*
+========================
+Forms styling
+========================
+*/
+
+.sign-up-image {
+  float: right;
+  margin: 0;
+}
+
+form {
+  width: 30%;
+  margin: 20px 0 20px 100px;
+
+  fieldset {
+    border: none;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  [type="text"], [type="password"], [type="email"], textarea, select {
+    width: 100%;
+    height: 32px;
+    -webkit-appearance: none;
+    border: 1px solid #000;
+    padding: 4px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: border 200ms ease-in-out;
+
+    &:focus, &:active {
+      border-color: #3977CC;
+    }
+  }
+
+  select {
+    height: 120px;
+  }
+
+  [type="submit"] {
+    width: 100%;
+  }
+
+  p {
+    color: rgba(0, 0, 0, 0.47);
+    text-align: right;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+/*
+========================
+Navigation section styling
+========================
+*/
+
+.pre-nav-block {
+  height: 50px;
+  background: #d90007;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    background-image: url(/images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 70px;
+    background-position: center;
+  }
+}
+nav {
+  ul {
+    margin: 0;
+    background: #8d0005;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      transition: background 200ms ease-in-out;
+
+      &:hover {
+        background: darken(#8d0005, 10%);
+      }
+
+      a {
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+/*
+========================
+Footer styling
+========================
+*/
+
+.footer-main {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/images/footer.png");
+  height: 100px;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*
+========================
+Businesses stub section styling
+========================
+*/
+
+.business-stub {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    font-size: 24px;
+    display: block;
+    color: rgba(0, 0, 0, 0.42);
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.42);
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    transition: border 300ms ease-in-out, color 300ms ease-in-out;
+
+    &:hover {
+      color: #000;
+      border-color: rgb(217, 0, 7);
+    }
+
+    &:before {
+      transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+      display: inline-block;
+      color: #fff;
+      content: "\002B";
+    }
+
+    &:hover:before {
+      transform: translateX(-5px);
+      color: #000;
+    }
+  }
+}
+
+/*
+========================
+Business index section styling
+========================
+*/
+
+.add-new-business {
+  float: right;
+  padding: 8px 16px;
+  background: #d90007;
+  color: #fff;
+  border: 1px solid #8d0005;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.business-list {
+  li {
+    display: block;
+    border-top: 1px solid rgb(212, 207, 207);
+    border-bottom: 1px solid rgb(212, 207, 207);
+  }
+
+  a {
+    color: #2262d9;
+    font-size: 14px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .business-name {
+    font-size: 16px;
+  }
+}
+
+.business-info {
+  float: right;
+  max-width: 200px;
+}
+
+img {
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/*
+========================
+Business page styling
+========================
+*/
+
+.business-page {
+  h1 {
+    font-size: 28px;
+  }
+
+  a {
+    color: #2262d9;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*
+========================
+Review form styling
+========================
+*/
+
+.new_review {
+  width: 400px;
+  margin: 50px 0 20px 0;
+
+  select {
+    height: auto;
+    width: 50%;
+  }
+
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  [type="submit"] {
+    display: block;
+    width: 30%;
+  }
+}
+
+/*
+========================
+Business reviews styling
+========================
+*/
+
+.reviews {
+  margin-top: 100px;
+
+  ul {
+    margin: 0 auto;
+    list-style: none;
+    width: 600px;
+
+    li {
+      overflow: hidden;
+      padding: 20px 10px 10px 10px;
+      border-top: 1px solid rgb(226, 226, 226);
+      border-bottom: 1px solid rgb(226, 226, 226);
+    }
+
+    .review-container {
+      float: right;
+
+      a.review-company {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      color: #2262d9;
+    }
+  }
+}
+
+/*
+========================
+Profile styling
+========================
+*/
+
+.user-profile {
+  p {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+.user-reviews {
+  text-align: center;
+  margin-top: 100px;
+
+  li {
+    border-bottom: 1px solid #ececec;
+    border-top: 1px solid #ececec;
+    padding: 20px 0 10px 0;
+  }
+
+  a {
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+}
+
+/*
+========================
+Categories index styling
+========================
+*/
+
+.categories {
+  ul {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

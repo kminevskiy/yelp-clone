@@ -1,0 +1,7 @@
+= render "shared/page_title", title: "Reviews"
+
+section.reviews
+  - if @reviews.present?
+    ul
+      - @reviews.each_with_index do |review|
+        = render "shared/review", review: review, reviews_page: true, business_page: true

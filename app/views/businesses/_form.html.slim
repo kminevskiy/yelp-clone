@@ -1,0 +1,16 @@
+img.sign-up-image(src="/images/new_biz.png")
+
+= form_for business do |f|
+  = f.label :name, "Business Name"
+  = f.text_field :name, placeholder: "The Orwell Corp."
+  = f.label :phone_num, "Phone #"
+  = f.text_field :phone_num, placeholder: "(xxx)xxx-xxxx"
+  = f.label :address, "Address"
+  = f.text_field :address, placeholder: "1234 Desert Inn"
+  = f.label :city
+  = f.text_field :city, placeholder: "San Francisco"
+  = f.label :state
+  = f.text_field :state, placeholder: "CA"
+  = f.label :category_ids, "Categories (multi-select)"
+  = f.collection_select :category_ids, Category.all, :id, :name, {}, { multiple: true }
+  = f.submit "Add business"

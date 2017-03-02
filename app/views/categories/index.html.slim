@@ -1,0 +1,6 @@
+= render "shared/page_title", title: "Business Categories"
+
+section.categories
+  ul
+    - @categories.each do |category|
+      = render "category", category: category

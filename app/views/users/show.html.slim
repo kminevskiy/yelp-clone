@@ -1,0 +1,9 @@
+= render "shared/page_title", title: "#{@user.full_name}'s profile"
+
+.user-profile
+  p = "Email: #{@user.email}"
+- if @user.reviews.present?
+  ul.user-reviews
+    h3 Reviews
+    - @user.reviews.each do |review|
+      = render "shared/review", review: review, business_page: false, reviews_page: false

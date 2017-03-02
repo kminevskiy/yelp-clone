@@ -1,0 +1,7 @@
+= form_for review do |f|
+  = f.hidden_field :business_id
+  = f.label :comment, "Review"
+  = f.text_area :comment
+  = f.label :rating, "Rating"
+  = f.select :rating, options_for_select([5, 4, 3, 2, 1]), prompt: "Select"
+  = f.submit "Add review"

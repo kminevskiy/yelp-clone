@@ -1,0 +1,13 @@
+img.sign-up-image(src="/images/signup_illustration.png")
+
+= form_for user do |f|
+  fieldset.general
+    = f.label :email, "Email"
+    = f.email_field :email, placeholder: "me@example.com"
+    = f.label :full_name, "Full Name"
+    = f.text_field :full_name, placeholder: "John Doe"
+    = f.label :password
+    = f.password_field :password
+  fieldset.actions
+    = f.submit "Create"
+    p = "Already on Yelp? #{link_to "Log in", login_path}".html_safe
