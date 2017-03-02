@@ -4,12 +4,14 @@ nav
   ul
     li
       = link_to "Businesses", businesses_path
-    li
-      = link_to "Reviews", reviews_path
+    - if reviews_exist?
+      li
+        = link_to "Reviews", reviews_path
     li
       = link_to "Categories", categories_path
     li.login-right
       - if logged_in?
+        img(src="#{current_user.generate_avatar(26)}")
         = link_to current_user.full_name, current_user
         = link_to "Logout", logout_path, method: :delete
       - else

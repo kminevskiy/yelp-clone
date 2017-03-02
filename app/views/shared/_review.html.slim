@@ -1,6 +1,11 @@
 li.review
   - if business_page
-    = link_to review.user.full_name, review.user
+    .user-info-container
+      img(src="#{review.user.generate_avatar(60)}")
+      .user-stats-container
+        = link_to review.user.full_name, review.user
+        p = pluralize(review.user.reviews.count, "review")
+
   - else
     = link_to review.business.name, review.business
   .review-container

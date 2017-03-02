@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   def first_review?(business_id)
     reviews.find_by(business_id: business_id).blank?
   end
+
+  def generate_avatar(size)
+    "http://api.adorable.io/avatar/#{size}/#{email}".html_safe
+  end
 end

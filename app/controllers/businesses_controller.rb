@@ -3,7 +3,7 @@ class BusinessesController < ApplicationController
 
   def index
     @businesses = Business.all
-    @businesses.present? ? render(:index) : render(:stub)
+    @businesses.present? ? render(:index) : render("shared/stub")
   end
 
   def show

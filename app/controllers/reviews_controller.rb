@@ -1,8 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :authenticated_user, only: [:create]
+  before_action :add_first_business, only: [:index]
 
   def index
     @reviews = Review.last_six
+    @reviews.present? ? render(:index) : render("shared/stub")
   end
 
   def create
