@@ -58,7 +58,7 @@ describe UsersController do
       end
 
       it "creates a flash error object" do
-        expect(flash[:error]).to eq("Please check your input and try again")
+        expect(flash.now[:error]).to eq("Please check your input and try again.")
       end
     end
   end

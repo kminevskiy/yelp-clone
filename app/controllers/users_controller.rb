@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to login_path
     else
-      flash[:error] = "Please check your input and try again"
+      flash.now[:error] = "Please check your input and try again."
       render :new
     end
   end

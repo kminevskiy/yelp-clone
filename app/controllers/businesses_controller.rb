@@ -22,7 +22,7 @@ class BusinessesController < ApplicationController
     if @business.save
       redirect_to home_path
     else
-      flash[:error] = "Please check your input and try again."
+      flash.now[:error] = "Please check your input and try again."
       render :new
     end
   end

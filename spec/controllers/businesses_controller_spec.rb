@@ -123,7 +123,7 @@ describe BusinessesController do
       end
 
       it "creates a flash error object" do
-        expect(flash[:error]).not_to be_nil
+        expect(flash.now[:error]).not_to be_nil
       end
     end
 

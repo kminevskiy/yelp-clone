@@ -57,26 +57,37 @@ describe ReviewsController do
   describe "GET index" do
     let(:user) { Fabricate(:user) }
 
-    it "renders the index page" do
-      get :index
-      expect(response).to render_template :index
+    context "with existins business and review" do
+      it "renders the index page if both review and business present" do
+        business = Fabricate(:business, user: user, categories: [Fabricate(:category)])
+        Fabricate(:review, business: business, user: user)
+        get :index
+        expect(response).to render_template :index
+      end
+
+      it "sets the reviews collection with appropriate model" do
+        business = Fabricate(:business, user: user, categories: [Fabricate(:category)])
+        Fabricate(:review, business: business, user: user)
+        get :index
+        expect(assigns(:reviews).first).to be_instance_of(Review)
+      end
+
+      it "set the reviews collection" do
+        user2 = Fabricate(:user)
+        business1 = Fabricate(:business, user: user, categories: [Fabricate(:category)])
+        business2 = Fabricate(:business, user: user2, categories: [Fabricate(:category)])
+        Fabricate(:review, business: business1, user: user)
+        Fabricate(:review, business: business2, user: user2)
+        get :index
+        expect(assigns(:reviews).count).to eq(2)
+      end
     end
 
-    it "sets the reviews collection with appropriate model" do
-      business = Fabricate(:business, user: user, categories: [Fabricate(:category)])
-      Fabricate(:review, business: business, user: user)
-      get :index
-      expect(assigns(:reviews).first).to be_instance_of(Review)
-    end
-
-    it "set the reviews collection" do
-      user2 = Fabricate(:user)
-      business1 = Fabricate(:business, user: user, categories: [Fabricate(:category)])
-      business2 = Fabricate(:business, user: user2, categories: [Fabricate(:category)])
-      Fabricate(:review, business: business1, user: user)
-      Fabricate(:review, business: business2, user: user2)
-      get :index
-      expect(assigns(:reviews).count).to eq(2)
+    context "without business and review" do
+      it "redirects to the home page if no reviews/businesses preset" do
+        get :index
+        expect(response).to redirect_to add_business_path
+      end
     end
   end
 end

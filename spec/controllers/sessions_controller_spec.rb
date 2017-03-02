@@ -37,7 +37,7 @@ describe SessionsController do
         expect(response).to render_template :new
       end
       it "create a flash error object" do
-        expect(flash[:error]).not_to be_nil
+        expect(flash.now[:error]).not_to be_nil
       end
     end
   end
