@@ -12,7 +12,7 @@ nav
     li.login-right
       - if logged_in?
         img(src="#{current_user.generate_avatar(26)}")
-        = link_to current_user.full_name, current_user
+        = link_to current_user.beautify, current_user
         = link_to "Logout", logout_path, method: :delete
       - else
         = link_to "Register", register_path

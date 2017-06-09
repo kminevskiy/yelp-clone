@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :authenticated_user, :already_signed_in, :add_first_business
 
   def current_user
-    User.find(session[:user_id]) if session[:user_id]
+    User.find(session[:user_id]).decorate if session[:user_id]
   end
 
   def logged_in?

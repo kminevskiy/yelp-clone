@@ -3,8 +3,7 @@ html
   head
     title Yelp
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
 
   body
     header
@@ -14,3 +13,4 @@ html
       = yield
     footer
       .footer-main
+    = javascript_include_tag 'application'
